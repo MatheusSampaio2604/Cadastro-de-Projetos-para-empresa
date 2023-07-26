@@ -1,0 +1,87 @@
+﻿@model Application.ViewModel.ProjetoViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Projeto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" placeholder="Descrição..." class="form-control" required/>
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Codigo" class="control-label">Gerência Geral</label>
+                <select asp-for="Codigo" asp-items="@(new SelectList(ViewBag.GerenciaGeral, "Nome", "Nome"))" class="form-select">
+                    <option selected disabled value="">Selecione</option>
+                </select>
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_Tema" class="control-label"></label>
+                <select asp-for="Id_Tema" asp-items="@(new SelectList(ViewBag.Tema, "Id", "Nome"))" class="form-select">
+                    <option selected disabled value="">Selecione</option>
+                </select>
+                <span asp-validation-for="Id_Tema" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_Objetivo" class="control-label"></label>
+                <select asp-for="Id_Objetivo" asp-items="@(new SelectList(ViewBag.Objetivo, "Id", "Nome"))" class="form-select">
+                    <option selected disabled value="">Selecione</option>
+                </select>
+                <span asp-validation-for="Id_Objetivo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_Financiamento" class="control-label"></label>
+                <select asp-for="Id_Financiamento" asp-items="@(new SelectList(ViewBag.Financiamento, "Id", "Nome"))" class="form-select">
+                    <option selected disabled value="">Selecione</option>
+                </select>
+                <span asp-validation-for="Id_Financiamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResponsavelId" class="control-label"></label>
+                <select asp-for="ResponsavelId" asp-items="@(new SelectList(ViewBag.Usuario, "Id", "Nome"))" class="form-select">
+                    <option selected disabled value="">Selecione</option>
+                </select>
+                <span asp-validation-for="ResponsavelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label"></label>
+                <select asp-for="ClienteId" asp-items="@(new SelectList(ViewBag.Usuario, "Id", "Nome"))" class="form-select" aria-label="Default select example">
+                    <option selected disabled value="">Selecione</option>
+                </select>
+                <span asp-validation-for="ClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApoioId" class="control-label"></label>
+                <select asp-for="ApoioId" asp-items="@(new SelectList(ViewBag.Usuario, "Id", "Nome"))" class="form-select"></select>
+                <span asp-validation-for="ApoioId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Anexo" for="formFileMultiple" class="form-label">Anexar:</label>
+                <input asp-for="Anexo" class="form-control-sm" id="formFileMultiple" type="file">
+                <span asp-validation-for="Anexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enviar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
