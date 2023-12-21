@@ -16,8 +16,10 @@ namespace Application.ViewModel
         public string? Nome { get; set; }
 
         public bool Ativo { get; set; }
+
         [DisplayName("Gerência Geral")]
         public int Id_GG { get; set; }
+
         public string? ItemAtivo { get; set; } 
 
         public virtual GerenciaGeralViewModel? GerenciaGeral { get; set; }  

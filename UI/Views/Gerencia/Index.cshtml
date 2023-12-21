@@ -20,6 +20,9 @@
                 @Html.DisplayNameFor(model => model.Id_GG)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Id_GG)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Ativo)
             </th>
             <th></th>
@@ -35,7 +38,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.GerenciaGeral.Nome)
                 </td>
-
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id_GG)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ItemAtivo)
                 </td>

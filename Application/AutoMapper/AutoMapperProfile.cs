@@ -1,6 +1,7 @@
 ﻿using Application.ViewModel;
 using AutoMapper;
 using Domain.Models;
+using System.Linq;
 
 namespace Application.AutoMapper
 {

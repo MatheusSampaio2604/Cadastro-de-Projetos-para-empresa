@@ -6,6 +6,10 @@ using Domain.Models;
 using Microsoft.Extensions.Logging;
 using Application.Enum;
 using Infra.Context;
+using System.Threading.Tasks;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Application
 {

@@ -1,6 +1,7 @@
 ﻿using Application.AutoMapper;
 
 using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace UI.Configuration
 {

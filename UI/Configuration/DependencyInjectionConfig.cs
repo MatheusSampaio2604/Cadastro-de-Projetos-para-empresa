@@ -3,7 +3,7 @@ using Application;
 using Domain.Interfaces;
 using Infra.Context;
 using Infra.Repository;
-
+using Microsoft.Extensions.DependencyInjection;
 
 namespace UI.Configuration
 {
